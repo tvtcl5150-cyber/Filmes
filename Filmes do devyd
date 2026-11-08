@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090909">
+<title>Filmes do Devyd</title>
+<style>
+:root{color-scheme:dark;--red:#e50914;--bg:#090909;--panel:#171717;--muted:#aaa}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:#fff;font:16px/1.5 Arial,Helvetica,sans-serif}
+header{position:sticky;top:0;z-index:2;background:#090909ed;border-bottom:1px solid #292929;padding:16px 5%;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.logo{font-weight:900;font-size:clamp(18px,3vw,27px);letter-spacing:.5px}.logo span{color:var(--red)}
+nav{display:flex;gap:16px;flex-wrap:wrap}nav a{color:#ddd;text-decoration:none;font-size:14px}
+.hero{padding:70px 5% 60px;background:linear-gradient(90deg,#090909 5%,#090909dd 48%,#09090955),radial-gradient(ellipse at 80% 40%,#741018 0%,#26090c 38%,#090909 75%);min-height:310px;display:flex;align-items:center}
+.hero-content{max-width:650px}.eyebrow{color:#ff5962;text-transform:uppercase;font-size:12px;font-weight:bold;letter-spacing:2px}
+h1{font-size:clamp(34px,6vw,60px);line-height:1.05;margin:10px 0 14px}.hero p{color:#ddd;max-width:560px}
+.note{background:#211719;border-left:4px solid var(--red);padding:12px 15px;border-radius:5px;color:#eee;font-size:13px;margin-top:22px}
+main{padding:28px 5% 60px}.toolbar{display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:22px}
+input,select{background:#171717;border:1px solid #444;color:white;border-radius:6px;padding:11px 13px;font-size:14px}
+input{min-width:min(100%,260px)}h2{font-size:22px;margin:28px 0 15px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:15px}
+.card{background:var(--panel);border:1px solid #292929;border-radius:9px;overflow:hidden;min-height:230px}
+.poster{height:145px;display:grid;place-items:center;background:linear-gradient(145deg,#401015,#171717 70%);font-size:36px}
+.card-body{padding:12px}.card h3{font-size:15px;margin:0 0 5px}.card p{font-size:12px;color:var(--muted);margin:0 0 10px}
+.tag{display:inline-block;border:1px solid #6b2429;color:#ff9aa0;border-radius:20px;padding:2px 8px;font-size:10px}
+button{background:var(--red);color:#fff;border:0;border-radius:5px;padding:9px 12px;font-weight:bold;cursor:pointer}
+button:hover{background:#b80710}.empty{color:var(--muted);padding:20px 0}
+footer{border-top:1px solid #292929;padding:25px 5%;color:#999;font-size:12px}
+@media(max-width:520px){header{align-items:flex-start;flex-direction:column}.hero{padding-top:48px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">FILMES <span>DO DEVYD</span></div>
+  <nav><a href="#inicio">Início</a><a href="#catalogo">Catálogo</a><a href="#fontes">Fontes oficiais</a><a href="#sobre">Sobre</a></nav>
+</header>
+<section class="hero" id="inicio">
+  <div class="hero-content">
+    <div class="eyebrow">Seu cinema particular</div>
+    <h1>Uma sessão começa aqui.</h1>
+    <p>Encontre seus filmes favoritos, explore categorias e acesse opções de reprodução autorizadas em português brasileiro.</p>
+    <a href="#catalogo"><button>Explorar catálogo</button></a>
+    <div class="note">Este é o modelo inicial do site. Os filmes completos só poderão ser reproduzidos quando houver um arquivo próprio ou uma fonte de streaming com autorização de exibição.</div>
+  </div>
+</section>
+<main id="catalogo">
+  <div class="toolbar">
+    <div><h2 style="margin:0">Catálogo</h2><small style="color:#aaa">Espaço preparado para seus títulos</small></div>
+    <input id="search" type="search" placeholder="Buscar filme..." aria-label="Buscar filme">
+    <select id="genre" aria-label="Filtrar por gênero"><option value="">Todos os gêneros</option><option>Ação</option><option>Comédia</option><option>Drama</option><option>Suspense</option><option>Terror</option></select>
+  </div>
+  <div class="grid" id="cards">
+    <article class="card" data-title="Filmes de ação" data-genre="Ação"><div class="poster">🎬</div><div class="card-body"><h3>Filmes de ação</h3><p>Categoria pronta para receber títulos licenciados.</p><span class="tag">Ação</span></div></article>
+    <article class="card" data-title="Comédia" data-genre="Comédia"><div class="poster">🍿</div><div class="card-body"><h3>Comédia</h3><p>Adicione aqui filmes com direitos de exibição.</p><span class="tag">Comédia</span></div></article>
+    <article class="card" data-title="Suspense e terror" data-genre="Terror"><div class="poster">🌙</div><div class="card-body"><h3>Suspense e terror</h3><p>Espaço reservado para o catálogo autorizado.</p><span class="tag">Terror</span></div></article>
+    <article class="card" data-title="Drama" data-genre="Drama"><div class="poster">⭐</div><div class="card-body"><h3>Drama</h3><p>Inclua sinopse, idioma e link de reprodução.</p><span class="tag">Drama</span></div></article>
+  </div>
+  <p id="empty" class="empty" hidden>Nenhum resultado encontrado.</p>
+
+  <section id="fontes">
+    <h2>Onde assistir legalmente</h2>
+    <p style="color:#aaa;max-width:760px">Estas plataformas oficiais oferecem catálogos gratuitos. Ao escolher uma, você será levado ao serviço responsável pela reprodução; os filmes não são incorporados nem copiados para este site.</p>
+    <div class="grid">
+      <article class="card"><div class="poster">🇧🇷</div><div class="card-body"><h3>Tela Brasil</h3><p>Streaming público e gratuito de obras audiovisuais brasileiras. Acesso com conta gov.br.</p><a href="https://telabrasil.cultura.gov.br/" target="_blank" rel="noopener"><button>Acessar Tela Brasil</button></a></div></article>
+      <article class="card"><div class="poster">🎞️</div><div class="card-body"><h3>Spcine Play</h3><p>Filmes, mostras e produções brasileiras em plataforma gratuita.</p><a href="https://spcineplay.com.br/" target="_blank" rel="noopener"><button>Acessar Spcine Play</button></a></div></article>
+      <article class="card"><div class="poster">📺</div><div class="card-body"><h3>Pluto TV</h3><p>Filmes sob demanda e canais ao vivo gratuitos. Pode exibir anúncios.</p><a href="https://pluto.tv/br/" target="_blank" rel="noopener"><button>Acessar Pluto TV</button></a></div></article>
+      <article class="card"><div class="poster">🍿</div><div class="card-body"><h3>Plex</h3><p>Filmes e séries gratuitos com anúncios; catálogo e idiomas variam.</p><a href="https://watch.plex.tv/pt-BR/on-demand" target="_blank" rel="noopener"><button>Acessar Plex</button></a></div></article>
+    </div>
+    <div class="note">Importante: fontes gratuitas normalmente têm catálogo rotativo e nem todos os títulos são dublados. Lançamentos que ainda estão no cinema geralmente não ficam disponíveis gratuitamente. Como você pediu uma experiência sem anúncios, observe que Pluto TV e Plex exibem publicidade; o site Filmes do Devyd não adiciona anúncios próprios.</div>
+  </section>
+
+  <section id="sobre"><h2>Sobre o Filmes do Devyd</h2><p style="color:#aaa;max-width:700px">Uma página pessoal, sem anúncios e sem cobrança de mensalidade pelo próprio site. A disponibilidade de filmes depende de conteúdo próprio, domínio público ou licenças válidas para exibição.</p></section>
+</main>
+<footer>© 2026 Filmes do Devyd · Projeto pessoal · Não hospeda nem distribui filmes sem autorização.</footer>
+<script>
+const search=document.querySelector('#search'),genre=document.querySelector('#genre'),cards=[...document.querySelectorAll('.card')],empty=document.querySelector('#empty');
+function filter(){let q=search.value.toLocaleLowerCase('pt-BR'),g=genre.value,n=0;cards.forEach(c=>{let ok=c.dataset.title.toLocaleLowerCase('pt-BR').includes(q)&&(!g||c.dataset.genre===g);c.hidden=!ok;if(ok)n++});empty.hidden=n!==0}
+search.addEventListener('input',filter);genre.addEventListener('change',filter);
+</script>
+</body></html>
